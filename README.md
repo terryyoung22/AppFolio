@@ -14,14 +14,15 @@ Some of the big features I have to offer in this repository so far is:
 
 * Github Actions pipeline - Working build of my nginx Container and soon to be Flask
 * Python files - Something I focus on, since this is public I dont put the real head bangers in but still a good time!
-* Web Framworks - Using Nginx and Flask!! again checkout that github actions part!
-* Others lol - I also have some of my other language projects. Looking to build that out more when I get some free time.
+* Web Frameworks - Using Nginx and Flask!! again checkout that github actions part!
+* Others lol - I also have some of my other language projects. Looking to build that out more when I get some free time which is few and far between with real life work lol
 
 ## To Come!
 This is just a section on apps when I get time from my actual job I can get going here!
 
 * Centralized interest app - I dont wanna check 8 different apps for info, would like to create an app that scrapes what I want and shows me
-* EKS/ECS builds - I have this of course for myself but dont really feel the ECS cluster is cost efficent, looking to optimize cost in the terraform build for it and then post here
+* EKS/ECS builds - I have this of course for myself but dont really feel the ECS cluster is cost efficient and looking to make the EKS build slightly more streamlined. Also looking to optimize cost in the terraform build for it and then post here
+* Ansible Playbook - looking to put a config that updates a server, then pulls down a simple nginx container and runs it
 * Dockerfile template creator - Im tired of every new project/app having to copy and paste, would be so much easier if I had a template for each style project (Python, NodeJS, React, etc.) that with the press of a button was generated in the project I am working on!
 * More to come! I killed a lot of my list just need to actually take out all the personal stuff and commit up!
 
