@@ -1,0 +1,8 @@
+Things to add to README:
+-move functions into their own go files
+
+
+Links used:
+
+accepting input:
+https://www.geeksforgeeks.org/how-to-take-input-from-the-user-in-golang/
