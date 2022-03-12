@@ -1,17 +1,17 @@
 package main
 
 import (
-    "log"
-    "os/exec"
+	"log"
+	"os/exec"
 )
 
-func main() {
+func cmd() {
 
-    cmd := exec.Command("go run http.go")
+	cmd := exec.Command("go run http.go")
 
-    err := cmd.Run()
+	err := cmd.Run()
 
-    if err != nil {
-        log.Fatal(err)
-    }
+	if err != nil {
+		log.Fatal(err)
+	}
 }
