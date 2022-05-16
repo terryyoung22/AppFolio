@@ -1,0 +1,40 @@
+pipeline {
+
+environment {
+imagename = "terryyoung1192/jenkinsngix"
+registryCredential = 'dockerhub login'
+dockerImage = ''
+}
+
+agent any
+stages {
+    stage("checkout") {
+        steps{
+            checkout scm
+        }
+    }
+    stage("build") {
+        steps {
+        script {
+            dockerImage = docker.build imagename
+            }
+        }
+    }
+    stage("push") {
+        steps {
+        script {
+            docker.withRegistry( '', registryCredential ) {
+                dockerImage.push("$BUILD_NUMBER")
+                    dockerImage.push('latest')
+            }
+            }
+        }
+    }
+    stage("Remove Images Locally") {
+        steps {
+            sh "docker rmi $imagename:$BUILD_NUMBER"
+            sh "docker rmi $imagename:latest"
+        }
+    }
+    }
+}

@@ -38,6 +38,14 @@ func main() {
 	} else if choice == "3" { //Add function to create more than 1 / add .txt option
 		createFolder()
 		fmt.Println("Function 3 is complete")
+
+	} else if choice == "4" {
+		dockerApp()
+		fmt.Println("Function 4 is complete")
+
+	} else if choice == "5" {
+		fmt.Println("Function 5 is complete")
+
 	} else {
 		fmt.Println("You have choosen a number which is not an option")
 	}
@@ -92,6 +100,16 @@ func createFolder() {
 	if err != nil {
 		log.Println(err)
 	}
+
+}
+
+func dockerApp() {
+	fmt.Println("*********** Welcome To The Docker App! **********")
+	fmt.Println("Wwhat can I do for you?")
+
+}
+
+func githubApp() {
 
 }
 

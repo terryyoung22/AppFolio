@@ -1,0 +1,24 @@
+head {
+    text-align: center;
+    background-color: #282c34;
+    color: white;
+}
+
+body {
+    text-align: center;
+    background-color: #282c34;
+    color: white;
+}
+
+a:link{
+    color: whitesmoke;
+}
+a:visited{
+    color: whitesmoke;
+  }
+
+footer {
+    text-align: center;
+    background-color: #282c34;
+    color: white;
+}
