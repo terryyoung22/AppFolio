@@ -1,11 +1,5 @@
 pipeline {
 
-environment {
-imagename = "terryyoung1192/jenkinsngix"
-registryCredential = 'dockerhub login'
-dockerImage = ''
-}
-
 agent { node {
     label 'aws'
  }
@@ -18,17 +12,17 @@ stages {
     }
     stage("build") {
         steps {
-        script {
-            dockerImage = docker.build imagename
+            script{
+                app = docker.build("terryyoung1192/nginx")
             }
         }
     }
     stage("push") {
         steps {
         script {
-            docker.withRegistry( '', registryCredential ) {
-                dockerImage.push("$BUILD_NUMBER")
-                    dockerImage.push('latest')
+            docker.withRegistry( 'https://registry.hub.docker.com', 'dockerhub' ) {
+                    app.push("${env.BUILD_NUMBER}")
+                    app.push("lastest")
             }
             }
         }
