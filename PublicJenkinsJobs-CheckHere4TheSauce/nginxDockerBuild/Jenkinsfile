@@ -6,17 +6,16 @@ registryCredential = 'dockerhub login'
 dockerImage = ''
 }
 
-agent any
+agent { node {
+    label 'aws'
+ }
+}
 stages {
     stage("checkout") {
         steps{
             checkout scm
         }
     }
-    //  stage('Initialize'){
-    //     def dockerHome = tool 'myDocker'
-    //     env.PATH = "${dockerHome}/bin:${env.PATH}"
-    // }
     stage("build") {
         steps {
         script {
