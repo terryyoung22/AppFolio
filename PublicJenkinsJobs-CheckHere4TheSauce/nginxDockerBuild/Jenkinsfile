@@ -27,10 +27,9 @@ stages {
             }
         }
     }
-    stage("Remove Images Locally") {
+    stage("Docker Image Prune") {
         steps {
-            sh "docker rmi $imagename:$BUILD_NUMBER"
-            sh "docker rmi $imagename:latest"
+            sh "docker image prune -a -f"
         }
     }
     }
