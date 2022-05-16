@@ -6,7 +6,7 @@ registryCredential = 'dockerhub login'
 dockerImage = ''
 }
 
-agent aws
+agent any
 stages {
     stage("checkout") {
         steps{
