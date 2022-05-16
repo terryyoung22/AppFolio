@@ -1,4 +1,4 @@
-# My Projects [!Devops Coder Guy(https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]
+# My Projects ![Devops Coder Guy](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
 
 ## Clone
 Just to help speed up the process, go ahead and clone:
