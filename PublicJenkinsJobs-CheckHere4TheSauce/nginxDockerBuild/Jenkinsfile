@@ -13,7 +13,7 @@ stages {
     stage("build") {
         steps {
             script{
-                app = docker.build("terryyoung1192/nginx")
+                app = docker.build("terryyoung1192/nginx", "-f PublicJenkinsJobs-CheckHere4TheSauce/nginxDockerBuild/Dockerfile")
             }
         }
     }
