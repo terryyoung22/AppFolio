@@ -17,7 +17,7 @@ stages {
             }
         }
     }
-    stage("push") {
+    stage("finish") {
         steps {
             sh '''
             #!/bin/bash
