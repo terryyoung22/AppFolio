@@ -29,6 +29,7 @@ stages {
     stage("Docker Image Prune") {
         steps {
             sh "docker image prune -a -f"
+            sh "echo Job Done"
         }
     }
     }
