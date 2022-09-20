@@ -22,7 +22,8 @@ Branches Duties are:
 
 And more to come!
 
-
+## Announcements:
+- ```portfolio.typrojects.io``` has been deprecated 9/20/22
 
 ## Thanks For Checking in!!! 
 <!-- Dont forget to check out my portfolio about me!
