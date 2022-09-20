@@ -15,7 +15,7 @@ Some of the big features I have to offer in this repository so far is:
 - [ ] Branch based deployments for Github Actions. Each branch represents a targeted project deployment. 
 Branches Duties are:
 - [ ] Terraform Projects: Build and destroy resources in my AWS account
-- [ ] Container Builds: Building containers I have put together with dockerfiles, usually something like nginx
+- [ ] Container Builds: Building containers I have put together with dockerfiles, usually something like nginx. Packages stored in the repo
 - [ ] Ansible playbooks: Books useful to me for configuration of EC2/VMs in AWS and Azure
 
 And more to come!
