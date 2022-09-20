@@ -1,6 +1,8 @@
 # My Projects ![Devops Coder Guy](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
 
-**--CURRENTLY BEING REBUILT!!--**
+### **CURRENTLY BEING REBUILT!!**
+### Check progress with my project board! Open to all suggestions as well!
+### [Project Board!](https://github.com/terryyoung22?tab=projects)
 
 ## Clone
 Just to help speed up the process, go ahead and clone:
