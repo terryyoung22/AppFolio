@@ -15,6 +15,10 @@ Some of the big features I have to offer in this repository so far is:
 
 ### To Be Built:
 - [ ] Branch based deployments for Github Actions. Each branch represents a targeted project deployment. 
+- [ ] GO desktop app
+- [ ] Python based data app that shows scraped results in a dashboard
+- [ ] Public Prometheus & Grafana
+- [ ] Public health of hosted sites (....been working on this for a while...)
 Branches Duties are:
 - [ ] Terraform Projects: Build and destroy resources in my AWS account
 - [ ] Container Builds: Building containers I have put together with dockerfiles, usually something like nginx. Packages stored in the repo
