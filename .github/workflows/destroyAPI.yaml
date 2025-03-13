@@ -1,0 +1,36 @@
+name: Destroy Lambda and API Gateway
+
+on:
+  schedule:
+    - cron: '0 1 * * 1-5' # 8pm Kickoff
+
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.0
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          region: us-east-1
+
+      - name: Initialize Terraform
+        run: terraform init -chdir=APICallApps/helloworldAPI
+
+      - name: Plan Terraform Changes
+        run: terraform plan -chdir=APICallApps/helloworldAPI
+
+      - name: Apply Terraform Changes
+        run: terraform apply -chdir=APICallApps/helloworldAPI -auto-approve
