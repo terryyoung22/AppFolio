@@ -1,10 +1,11 @@
 name: Build Fantasy Football Site Container
 
 on:
-  push:
-    paths:
-    - '.github/**'
-    - 'nginx/**'
+  # push:
+  #   paths:
+  #   - '.github/**'
+  #   - 'nginx/**'
+  workflow_dispatch:
 
 jobs:
   build:
