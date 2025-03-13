@@ -32,11 +32,17 @@ jobs:
       - name: List all files and folders
         run: ls -la
     
-      # - name: Initialize Terraform
-      #   run: terraform init -chdir=APICallApps/helloworldAPI
+      - name: Initialize Terraform
+        run: |
+          cd APICallApps/helloworldAPI
+          terraform init
 
-      # - name: Plan Terraform Changes
-      #   run: terraform plan -chdir=APICallApps/helloworldAPI
+      - name: Plan Terraform Changes
+        run: |
+          cd APICallApps/helloworldAPI 
+          terraform plan
 
-      # - name: Apply Terraform Changes
-      #   run: terraform apply -chdir=APICallApps/helloworldAPI -auto-approve
+      - name: Apply Terraform Changes
+        run: |
+          cd APICallApps/helloworldAPI 
+          terraform apply -auto-approve
