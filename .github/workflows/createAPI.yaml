@@ -26,11 +26,17 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Initialize Terraform
-        run: terraform init -chdir=APICallApps/helloworldAPI
+      - name: Show current directory
+        run: pwd
 
-      - name: Plan Terraform Changes
-        run: terraform plan -chdir=APICallApps/helloworldAPI
+      - name: List all files and folders
+        run: ls -la
+    
+      # - name: Initialize Terraform
+      #   run: terraform init -chdir=APICallApps/helloworldAPI
 
-      - name: Apply Terraform Changes
-        run: terraform apply -chdir=APICallApps/helloworldAPI -auto-approve
+      # - name: Plan Terraform Changes
+      #   run: terraform plan -chdir=APICallApps/helloworldAPI
+
+      # - name: Apply Terraform Changes
+      #   run: terraform apply -chdir=APICallApps/helloworldAPI -auto-approve
