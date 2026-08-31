@@ -1,10 +1,143 @@
 [
   {
-    "text": "Quote from Github",
+    "text": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain",
     "category": "Motivation"
   },
   {
-    "text": "This is also a quote from github",
+    "text": "It does not matter how slowly you go as long as you do not stop.",
+    "author": "Confucius",
+    "category": "Motivation"
+  },
+  {
+    "text": "The only way to do great work is to love what you do.",
+    "author": "Steve Jobs",
+    "category": "Motivation"
+  },
+  {
+    "text": "Don't watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson",
+    "category": "Motivation"
+  },
+  {
+    "text": "Believe you can and you're halfway there.",
+    "author": "Theodore Roosevelt",
+    "category": "Motivation"
+  },
+  {
+    "text": "Push yourself, because no one else is going to do it for you.",
+    "category": "Motivation"
+  },
+  {
+    "text": "Great things never come from comfort zones.",
+    "category": "Motivation"
+  },
+  {
+    "text": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein",
+    "category": "Wisdom"
+  },
+  {
+    "text": "Life is 10% what happens to you and 90% how you react to it.",
+    "author": "Charles R. Swindoll",
+    "category": "Wisdom"
+  },
+  {
+    "text": "The unexamined life is not worth living.",
+    "author": "Socrates",
+    "category": "Wisdom"
+  },
+  {
+    "text": "To know what you know and what you do not know — that is true knowledge.",
+    "author": "Confucius",
+    "category": "Wisdom"
+  },
+  {
+    "text": "The only true wisdom is in knowing you know nothing.",
+    "author": "Socrates",
+    "category": "Wisdom"
+  },
+  {
+    "text": "Yesterday is history, tomorrow is a mystery, today is a gift.",
+    "author": "Eleanor Roosevelt",
+    "category": "Wisdom"
+  },
+  {
+    "text": "Everything you've ever wanted is on the other side of fear.",
+    "author": "George Addair",
+    "category": "Courage"
+  },
+  {
+    "text": "Courage is not the absence of fear, but acting in spite of it.",
+    "author": "Mark Twain",
+    "category": "Courage"
+  },
+  {
+    "text": "It takes courage to grow up and become who you really are.",
+    "author": "E.E. Cummings",
+    "category": "Courage"
+  },
+  {
+    "text": "Hardships often prepare ordinary people for an extraordinary destiny.",
+    "author": "C.S. Lewis",
+    "category": "Courage"
+  },
+  {
+    "text": "You gain strength, courage, and confidence by every experience in which you look fear in the face.",
+    "author": "Eleanor Roosevelt",
+    "category": "Courage"
+  },
+  {
+    "text": "Happiness is not something ready-made. It comes from your own actions.",
+    "author": "Dalai Lama",
+    "category": "Happiness"
+  },
+  {
+    "text": "The purpose of our lives is to be happy.",
+    "author": "Dalai Lama",
+    "category": "Happiness"
+  },
+  {
+    "text": "Count your age by friends, not years. Count your life by smiles, not tears.",
+    "author": "John Lennon",
+    "category": "Happiness"
+  },
+  {
+    "text": "Spread love everywhere you go. Let no one ever come to you without leaving happier.",
+    "author": "Mother Teresa",
+    "category": "Happiness"
+  },
+  {
+    "text": "When you focus on the good, the good gets better.",
+    "category": "Happiness"
+  },
+  {
+    "text": "Act as if what you do makes a difference. It does.",
+    "author": "William James",
+    "category": "Happiness"
+  },
+  {
+    "text": "Outwork everyone in the room.",
+    "category": "The Grind"
+  },
+  {
+    "text": "The bag doesn't chase you. You chase the bag.",
+    "category": "The Grind"
+  },
+  {
+    "text": "No days off. No excuses. No ceiling.",
+    "category": "The Grind"
+  },
+  {
+    "text": "Your future self is watching. Make them proud.",
+    "category": "The Grind"
+  },
+  {
+    "text": "Sleep is for those without a vision.",
+    "category": "The Grind"
+  },
+  {
+    "text": "Build in silence. Let the results make the noise.",
     "category": "The Grind"
   }
 ]
