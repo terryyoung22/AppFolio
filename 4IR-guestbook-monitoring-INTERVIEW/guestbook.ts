@@ -1,11 +1,7 @@
-// Guestbook application, based on pulumi/examples kubernetes-ts-guestbook/simple,
-// extended with Prometheus exporter sidecars and dedicated metrics Services.
-
 import * as k8s from "@pulumi/kubernetes";
 import * as pulumi from "@pulumi/pulumi";
 import * as cfg from "./config";
 
-/** Label put on every metrics Service; the ServiceMonitor selects on it. */
 export const scrapeLabel = { "guestbook.monitoring/scrape": "true" };
 
 const ns = new k8s.core.v1.Namespace("guestbook", {
@@ -15,7 +11,6 @@ export const namespace = ns.metadata.name;
 
 const partOf = { "app.kubernetes.io/part-of": "guestbook" };
 
-/** redis_exporter sidecar: talks to Redis over localhost inside the pod. */
 function redisExporter(): k8s.types.input.core.v1.Container {
     return {
         name: "redis-exporter",
@@ -30,8 +25,6 @@ function redisExporter(): k8s.types.input.core.v1.Container {
     };
 }
 
-/** ClusterIP Service exposing only the exporter port, kept separate from the app Service
- *  so the public frontend LoadBalancer never exposes /metrics. */
 function metricsService(app: string, port: number, dependsOn: pulumi.Resource) {
     return new k8s.core.v1.Service(`${app}-metrics`, {
         metadata: {

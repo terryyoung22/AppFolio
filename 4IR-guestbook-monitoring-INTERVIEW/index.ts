@@ -1,5 +1,3 @@
-// Entry point: Guestbook app + Prometheus/Grafana monitoring.
-
 import { frontendIp } from "./guestbook";
 import {
     grafanaAdminPassword,

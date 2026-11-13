@@ -1,5 +1,3 @@
-// Prometheus + Grafana via kube-prometheus-stack, plus Guestbook ServiceMonitor and dashboard.
-
 import * as fs from "fs";
 import * as path from "path";
 import * as k8s from "@pulumi/kubernetes";
@@ -12,7 +10,6 @@ const ns = new k8s.core.v1.Namespace("monitoring", {
     metadata: { name: cfg.monitoringNamespace },
 });
 
-// Admin password: taken from config if set, otherwise generated. Either way it's a Pulumi secret.
 const adminPassword: pulumi.Output<string> = cfg.grafanaAdminPassword
     ?? new random.RandomPassword("grafana-admin-password", { length: 20, special: false }).result;
 
@@ -29,8 +26,6 @@ const stack = new k8s.helm.v3.Release("kube-prometheus-stack", {
     repositoryOpts: { repo: "https://prometheus-community.github.io/helm-charts" },
     timeout: 900,
     values: {
-        // Control-plane components aren't scrapeable on managed (EKS/GKE/AKS) or local clusters;
-        // disabling them keeps the Targets page free of permanently-down jobs.
         kubeEtcd: { enabled: false },
         kubeControllerManager: { enabled: false },
         kubeScheduler: { enabled: false },
@@ -39,7 +34,6 @@ const stack = new k8s.helm.v3.Release("kube-prometheus-stack", {
 
         prometheus: {
             prometheusSpec: {
-                // Pick up ServiceMonitors/PodMonitors from any namespace, regardless of labels.
                 serviceMonitorSelectorNilUsesHelmValues: false,
                 podMonitorSelectorNilUsesHelmValues: false,
                 probeSelectorNilUsesHelmValues: false,
@@ -57,20 +51,14 @@ const stack = new k8s.helm.v3.Release("kube-prometheus-stack", {
             service: grafanaService,
             defaultDashboardsTimezone: "browser",
             sidecar: {
-                // Load any ConfigMap labelled grafana_dashboard=1 from any namespace.
                 dashboards: { enabled: true, label: "grafana_dashboard", labelValue: "1", searchNamespace: "ALL" },
             },
         },
 
-        // Docker Desktop / kind can't do rslave mounts of the host root; node metrics still work without it.
         "prometheus-node-exporter": { hostRootFsMount: { enabled: false } },
     },
 });
 
-//
-// Scrape config for the Guestbook: one ServiceMonitor that matches every *-metrics Service.
-// `jobLabel: app` makes the Prometheus job name "frontend", "redis-leader", "redis-replica".
-//
 new k8s.apiextensions.CustomResource("guestbook-servicemonitor", {
     apiVersion: "monitoring.coreos.com/v1",
     kind: "ServiceMonitor",
@@ -88,12 +76,11 @@ new k8s.apiextensions.CustomResource("guestbook-servicemonitor", {
             interval: "15s",
             path: "/metrics",
             relabelings: [
-                // Surface the pod's Deployment-level app label as `component` for dashboards.
                 { sourceLabels: ["__meta_kubernetes_pod_label_app"], targetLabel: "component" },
             ],
         }],
     },
-}, { dependsOn: [stack] }); // CRD is installed by the chart
+}, { dependsOn: [stack] });
 
 //
 // Grafana dashboard, auto-provisioned by the Grafana sidecar.
@@ -109,9 +96,6 @@ new k8s.core.v1.ConfigMap("guestbook-dashboard", {
     },
 }, { dependsOn: [stack] });
 
-//
-// Grafana access details. Read the Service the chart created to get its external address.
-//
 const grafanaSvc = k8s.core.v1.Service.get(
     "grafana-svc",
     pulumi.interpolate`${stack.status.namespace}/grafana`,
