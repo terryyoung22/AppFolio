@@ -1,0 +1,8 @@
+name: guestbook-monitoring
+runtime: nodejs
+description: Kubernetes Guestbook (Pulumi example) extended with Prometheus + Grafana monitoring
+config:
+  guestbook-monitoring:isMinikube:
+    type: boolean
+    description: Local cluster without LoadBalancer support (minikube/kind). Frontend becomes ClusterIP and Grafana becomes NodePort.
+    default: false
